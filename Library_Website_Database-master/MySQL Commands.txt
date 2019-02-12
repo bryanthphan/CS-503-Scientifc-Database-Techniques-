@@ -1,0 +1,57 @@
+﻿show databases; 
+CREATE DATABASE library; 
+use library; 
+
+
+CREATE TABLE people(fname varchar(15), lname varchar(15), libID BIGINT, phone BIGINT, address varchar(100), PRIMARY KEY(libID)); 
+
+
+CREATE TABLE books(title varchar(50), fauthor varchar(15), lauthor varchar(15), ISBN BIGINT, PRIMARY KEY(ISBN)); 
+
+
+CREATE TABLE reserves(libID BIGINT, ISBN BIGINT, PRIMARY KEY(libID, ISBN), FOREIGN KEY(libID) references people(libID), FOREIGN KEY(ISBN) references books(ISBN)); 
+
+
+show tables; 
+
+
+show columns from people; 
+
+
+show columns from books; 
+
+
+show columns from reserves; 
+
+
+insert into books(title, fauthor, lauthor, ISBN) values ("Moby Dick",  "Herman", "Melville", 9781853260087);
+
+
+insert into books(title, fauthor, lauthor, ISBN) values ("Hamlet",  "William", "Shakespeare", 9780743477123);
+
+
+insert into books(title, fauthor, lauthor, ISBN) values ("War and Peace",  "Leo", "Tolstoy", 9781400079988);
+
+
+insert into books(title, fauthor, lauthor, ISBN) values ("The Odyssey",  "", "Homer", 9780140268867);
+
+
+insert into books(title, fauthor, lauthor, ISBN) values ("One Hundred Years of Solitude",  "Gabriel", "Garcia Marquez", 9780060883287);
+
+
+insert into books(title, fauthor, lauthor, ISBN) values ("The Divine Comedy",  "Dante", "Alighieri", 9780451208637);
+
+
+insert into books(title, fauthor, lauthor, ISBN) values ("The Brothers Karamazov",  "Fyodor", "Dostoyevsky", 9780374528379);
+
+
+insert into books(title, fauthor, lauthor, ISBN) values ("Madame Bovary",  "Gustave", "Flaubert", 9780143106494);
+
+
+insert into books(title, fauthor, lauthor, ISBN) values ("The Adventures of Huckleberry Finn",  "Mark", "Twain", 9780486280615);
+
+
+insert into books(title, fauthor, lauthor, ISBN) values ("The Iliad",  "", "Homer", 9780140275360);
+
+
+insert into books(title, fauthor, lauthor, ISBN) values ("Lolita",  "Vladimir", "Nabokov", 9780679723165);
